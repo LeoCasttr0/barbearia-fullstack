@@ -3,6 +3,8 @@ import Header from "../_components/header";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import Search from "./_components/search";
+import Booking from "../_components/booking-item";
+import BookingItem from "../_components/booking-item";
 
 export default function Home() {
   return (
@@ -16,13 +18,18 @@ export default function Home() {
         {/* data de hoje, importamos o formart do date fns, usamos a data de hj como para 1, e como segundo parametro o formato dessa data */}
         <p className="capitalize text-sm">
           {" "}
-          {format(new Date(), "EEEE',' dd 'de' MMMM", { locale: ptBR })}
+          {format(new Date(), "EEEE',' dd 'de' MMMM", { locale: ptBR, })}
         </p>
       </div>
 
       {/* div do input de pesquisar uma barbearia */}
       <div className="px-5 mt-6">
         <Search />
+      </div>
+
+      <div className="px-5 mt-6">
+        <h2 className="text-xs uppercase text-gray-400 font-bold mb-3">Agendamentos</h2>
+        <BookingItem />
       </div>
     </div>
   );
