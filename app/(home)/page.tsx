@@ -36,7 +36,7 @@ export default async function Home() {
         </h2>
         <BookingItem />
       </div>
-    
+
       <div className="mt-6">
         <h2 className="px-5 text-xs uppercase text-gray-400 font-bold mb-3">
           Recomendados
@@ -44,7 +44,22 @@ export default async function Home() {
 
         {/* Div que renderiza as barbearias  */}
         {/* overflow-x-auto: rolagem horizontal */}
-        <div className="flex gap-2 overflow-x-auto [&:: -webkit-scrollbar]:hidden">
+        <div className="flex px-5 gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          {barbershops.map((barbershop) => (
+            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+          ))}
+        </div>
+      </div>
+
+      {/* populares */}
+      <div className="mt-6 mb-[4.5rem]">
+        <h2 className="px-5 text-xs uppercase text-gray-400 font-bold mb-3">
+          populares
+        </h2>
+
+        {/* Div que renderiza as barbearias  */}
+        {/* overflow-x-auto: rolagem horizontal */}
+        <div className="flex px-5 gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {barbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
