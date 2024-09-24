@@ -1,3 +1,5 @@
+// tela de serviços
+
 import { Button } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
 import { Service } from "@prisma/client";
@@ -34,9 +36,7 @@ const ServiceItem = ({ service }: ServiceItemprops) => {
                 currency: "BRL",
               }).format(Number(service.price))}
             </p>
-            <Button variant="secondary">
-              Reservar
-            </Button>
+            <Button variant="secondary">Reservar</Button>
           </div>
         </div>
       </CardContent>
